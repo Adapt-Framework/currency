@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adapt_framework>
+    <bundle>
+        <name>currency</name>
+        <label>Currency</label>
+        <description>Base currency that provides the foundations for currencies.</description>
+        <namespace>\adapt\currency</namespace>
+        <copyright>2016 Matt Bruton</copyright>
+        <license>MIT</license>
+        <website>http://www.adaptframework.com/documentaion/extentions/currency</website>
+        <depends_on>
+            <bundle>
+                <name>adapt</name>
+                <version>2.0</version>
+            </bundle>
+        </depends_on>
+        <settings>
+            <category name="Default currency">
+                <setting>
+                    <name>Default currency</name>
+                    <label>Default currency</label>
+                    <default_value>usd</default_value>
+                </setting>
+            </category>
+        </settings>
+        <schema>
+            <add>
+                <table name="currency">
+                    <field name="currency_id" key="primary" auto-increment="Yes">
+                        <data_type>bigint</data_type>
+                        <label>Currency #</label>
+                    </field>
+                    <field name="name">
+                        <data_type>varchar</data_type>
+                        <max_length>64</max_length>
+                        <label>Name</label>
+                    </field>
+                    <field name="label">
+                        <data_type>varchar</data_type>
+                        <max_length>128</max_length>
+                        <label>Label</label>
+                    </field>
+                    <field name="iso_code">
+                        <data_type>varchar</data_type>
+                        <max_length>3</max_length>
+                        <label>ISO Currency code</label>
+                    </field>
+                    <field name="decimal_places">
+                        <data_type>tinyint</data_type>
+                        <max_length>1</max_length>
+                        <label>Decimal places</label>
+                    </field>
+                    <field name="symbol_whole">
+                        <data_type>varchar</data_type>
+                        <max_length>5</max_length>
+                        <label>Symbol (Units)</label>
+                    </field>
+                    <field name="symbol_partial">
+                        <data_type>varchar</data_type>
+                        <max_length>5</max_length>
+                        <label>Symbol (After decimal place)</label>
+                    </field>
+                    <field name="symbol_whole_html">
+                        <data_type>varchar</data_type>
+                        <max_length>32</max_length>
+                        <label>HTML Symbol (Units)</label>
+                    </field>
+                    <field name="symbol_partial_html">
+                        <data_type>varchar</data_type>
+                        <max_length>32</max_length>
+                        <label>HTML Symbol (After decimal place)</label>
+                    </field>
+                </table>
+            </add>
+        </schema>
+    </bundle>
+</adapt_framework>
