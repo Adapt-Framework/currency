@@ -2,11 +2,13 @@
 <adapt_framework>
     <bundle>
         <name>currency</name>
+        <type>extension</type>
         <label>Currency</label>
         <description>Base currency that provides the foundations for currencies.</description>
         <namespace>\adapt\currency</namespace>
         <copyright>2016 Matt Bruton</copyright>
         <license>MIT</license>
+        <version>1.0.0</version>
         <website>http://www.adaptframework.com/documentaion/extentions/currency</website>
         <depends_on>
             <bundle>
