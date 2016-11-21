@@ -19,9 +19,9 @@
         <settings>
             <category name="Default currency">
                 <setting>
-                    <name>Default currency</name>
+                    <name>currency.default</name>
                     <label>Default currency</label>
-                    <default_value>usd</default_value>
+                    <default_value>gbp</default_value>
                 </setting>
             </category>
         </settings>
@@ -52,6 +52,16 @@
                         <max_length>1</max_length>
                         <label>Decimal places</label>
                     </field>
+                    <field name="decimal_separator">
+                        <data_type>varchar</data_type>
+                        <max_length>3</max_length>
+                        <label>Decimal separater</label>
+                    </field>
+                    <field name="thousands_separator">
+                        <data_type>varchar</data_type>
+                        <max_length>3</max_length>
+                        <label>Thousands separater</label>
+                    </field>
                     <field name="symbol_whole">
                         <data_type>varchar</data_type>
                         <max_length>5</max_length>
@@ -72,6 +82,15 @@
                         <max_length>32</max_length>
                         <label>HTML Symbol (After decimal place)</label>
                     </field>
+                </table>
+                <table name="data_type">
+                    <record>
+                        <name>currency</name>
+                        <based_on_data_type>decimal(20,4)</based_on_data_type>
+                        <validator>currency</validator>
+                        <formatter>currency</formatter>
+                        <unformatter>currency</unformatter>
+                    </record>
                 </table>
             </add>
         </schema>
