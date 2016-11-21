@@ -49,6 +49,10 @@ adapt.currency = {
             format.symbol_partial = adapt.setting('currency.symbol_partial');
         }
         
+        return this.format_with_format(value, format);
+    },
+    
+    format_with_format: function(value, format){
         value = parseFloat(value).toFixed(format.decimal_places);
         
         var string_value = value.toString().split(format.decimal_separator);
