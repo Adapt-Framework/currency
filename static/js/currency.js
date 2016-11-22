@@ -56,10 +56,10 @@ adapt.currency = {
         value = parseFloat(value).toFixed(format.decimal_places);
         
         var string_value = value.toString().split(format.decimal_separator);
-        if (string_value[0].length >= 5){
+        if (string_value[0].length >= 4){
             string_value[0] = string_value[0].replace(/(\d)(?=(\d{3})+$)/g, '$1' + format.thousands_separator);
         }
-        if (string_value[1] && string_value[1].length >= 5){
+        if (string_value[1] && string_value[1].length >= 4){
             string_value[1] = string_value[1].replace(/(\d{3})/g, '$1');
         }
         
