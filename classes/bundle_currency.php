@@ -45,6 +45,10 @@ namespace adapt\currency{
                         if ($default_currency){    
                             $currency->load_by_name($default_currency);
                         }
+
+                        if ($value === null) {
+                            $value = 0;
+                        }
                         
                         return $currency->format($value);
                     },
