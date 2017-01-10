@@ -6,6 +6,8 @@
         <label>Currency</label>
         <description>Base currency that provides the foundations for currencies.</description>
         <namespace>\adapt\currency</namespace>
+        <version_status>release</version_status>
+        <availability>public</availability>
         <copyright>2016 Matt Bruton</copyright>
         <license>MIT</license>
         <version>1.0.0</version>
