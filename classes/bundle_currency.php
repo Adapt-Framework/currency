@@ -33,6 +33,24 @@ namespace adapt\currency{
                 
                 // Add validator
                 $this->sanitize->add_validator('currency', "^((-)?[0-9]+|((-)?[0-9])*\.[0-9]+)$");
+
+                // Add validator for positive non-zero
+                $this->sanitize->add_validator(
+                    'currency_positive_non_zero',
+                    function($value) {
+                        if (!is_numeric($value)) return false;
+                        if ($value < 0.01) return false;
+                        if ((($value * 100) - (floor($value * 100))) > 0) return false;
+                        return true;
+                    },
+                    "function(value){
+                        value = parseFloat(value);
+                        if (value === NaN) return false;
+                        if (value < 0.01) return false;
+                        if (((value * 100) - (Math.floor(value * 100))) > 0) return false;
+                        return true;
+                    }"
+                );
                 
                 // Add formatter
                 $this->sanitize->add_format(

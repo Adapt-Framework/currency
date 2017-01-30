@@ -93,6 +93,13 @@
                         <formatter>currency</formatter>
                         <unformatter>currency</unformatter>
                     </record>
+                    <record>
+                        <name>currency_positive_non_zero</name>
+                        <based_on_data_type>decimal(20,4)</based_on_data_type>
+                        <validator>currency_positive_non_zero</validator>
+                        <formatter>currency</formatter>
+                        <unformatter>currency</unformatter>
+                    </record>
                 </table>
             </add>
         </schema>
