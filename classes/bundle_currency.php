@@ -51,6 +51,24 @@ namespace adapt\currency{
                         return true;
                     }"
                 );
+
+                // HRN-130 - remove decimal places from opportunity numbers
+                $this->sanitize->add_validator(
+                    'currency_positive_non_zero_zero_dp',
+                    function($value) {
+                        if (!is_numeric($value)) return false;
+                        if ($value < 0) return false;
+                        if (ceil($value) != $value) return false;
+                        return true;
+                    },
+                    "function(value){
+                        value = parseFloat(value);
+                        if (value === NaN) return false;
+                        if (value < 0) return false;
+                        if (Math.ceil(value) != value) return false;
+                        return true;
+                    }"
+                );
                 
                 // Add formatter
                 $this->sanitize->add_format(
@@ -72,6 +90,29 @@ namespace adapt\currency{
                     },
                     "function(value){
                         return adapt.currency.format(value);
+                    }"
+                );
+
+                // HRN-130 - Whole number formatter
+                $this->sanitize->add_format(
+                    'currency_non_zero_zero_dp',
+                    function($value) {
+                        $adapt = $GLOBALS['adapt'];
+                        $default_currency = $adapt->setting('currency.default');
+                        $currency = new model_currency();
+
+                        if ($default_currency){
+                            $currency->load_by_name($default_currency);
+                        }
+
+                        if ($value === null) {
+                            $value = 0;
+                        }
+
+                        return $currency->format(floor($value));
+                    },
+                    "function(value){
+                        return adapt.currency.format(Math.floor(value));
                     }"
                 );
                     
