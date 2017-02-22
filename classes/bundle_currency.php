@@ -64,7 +64,7 @@ namespace adapt\currency{
                     "function(value){
                         value = parseFloat(value);
                         if (value === NaN) return false;
-                        if (value < 0) return false;
+                        if (value <= 0) return false;
                         if (Math.ceil(value) != value) return false;
                         return true;
                     }"
@@ -95,7 +95,7 @@ namespace adapt\currency{
 
                 // HRN-130 - Whole number formatter
                 $this->sanitize->add_format(
-                    'currency_non_zero_zero_dp',
+                    'currency_positive_non_zero_zero_dp',
                     function($value) {
                         $adapt = $GLOBALS['adapt'];
                         $default_currency = $adapt->setting('currency.default');
