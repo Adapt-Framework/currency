@@ -63,6 +63,6 @@ adapt.currency = {
             string_value[1] = string_value[1].replace(/(\d{3})/g, '$1');
         }
         
-        return format.symbol_whole_html + string_value.join(format.decimal_separator);
+        return format.symbol_whole + string_value.join(format.decimal_separator);
     }
 };

@@ -22,7 +22,9 @@ namespace adapt\currency{
                             'symbol_partial', 'symbol_partial_html'
                         ];
                         foreach($keys as $key){
-                            $this->dom->head->add(new html_meta(['class' => 'setting', 'name' => 'currency.' . $key, 'content' => $currency->$key]));
+                            $meta = "<meta class=\"setting\" name=\"currency.{$key}\" content=\"{$currency->$key}\" />";
+                            $this->dom->head->_add($meta, true);
+                            //$this->dom->head->add(new html_meta(['class' => 'setting', 'name' => 'currency.' . $key, 'content' => $currency->$key]));
                         }
                     }
                 }
