@@ -73,6 +73,9 @@ namespace adapt\currency{
                         return $currency->format($value);
                     },
                     "function(value){
+                        if (value === null) {
+                            value = 0;
+                        }
                         return adapt.currency.format(value);
                     }"
                 );
