@@ -8,7 +8,11 @@ namespace adapt\currency{
             parent::__construct('currency', $id, $data_source);
         }
         
-        public function format(float $value){
+        public function format($value){
+            if ($value === null || $value == '') {
+                return null;
+            }
+
             $decimal_places = 2;
             $decimal_separator = '.';
             $thousands_separator = ',';

@@ -6,9 +6,10 @@
         <label>Currency</label>
         <description>Base currency that provides the foundations for currencies.</description>
         <namespace>\adapt\currency</namespace>
+        <version_status>release</version_status>
+        <availability>public</availability>
         <copyright>2016 Matt Bruton</copyright>
         <license>MIT</license>
-        <version>1.0.0</version>
         <version_status>release</version_status>
         <availability>public</availability>
         <vendor>
@@ -21,6 +22,7 @@
                 <email>matt.bruton@gmail.com</email>
             </author>
         </authors>
+        <version>0.9.0</version>
         <depends_on>
             <bundle>
                 <name>adapt</name>
@@ -99,6 +101,13 @@
                         <name>currency</name>
                         <based_on_data_type>decimal(20,4)</based_on_data_type>
                         <validator>currency</validator>
+                        <formatter>currency</formatter>
+                        <unformatter>currency</unformatter>
+                    </record>
+                    <record>
+                        <name>currency_positive_non_zero</name>
+                        <based_on_data_type>decimal(20,4)</based_on_data_type>
+                        <validator>currency_positive_non_zero</validator>
                         <formatter>currency</formatter>
                         <unformatter>currency</unformatter>
                     </record>
