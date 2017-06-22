@@ -9,7 +9,18 @@
         <copyright>2016 Matt Bruton</copyright>
         <license>MIT</license>
         <version>1.0.0</version>
-        <website>http://www.adaptframework.com/documentaion/extentions/currency</website>
+        <version_status>release</version_status>
+        <availability>public</availability>
+        <vendor>
+            <name>Adapt Framework</name>
+            <website>https://www.adaptframework.com</website>
+        </vendor>
+        <authors>
+            <author>
+                <name>Matt Bruton</name>
+                <email>matt.bruton@gmail.com</email>
+            </author>
+        </authors>
         <depends_on>
             <bundle>
                 <name>adapt</name>
