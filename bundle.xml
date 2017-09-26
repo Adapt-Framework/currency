@@ -8,21 +8,13 @@
         <namespace>\adapt\currency</namespace>
         <version_status>release</version_status>
         <availability>public</availability>
-        <copyright>2016 Matt Bruton</copyright>
+        <version>0.9.0</version>
+        <copyright>2017 Matt Bruton</copyright>
         <license>MIT</license>
-        <version_status>release</version_status>
-        <availability>public</availability>
         <vendor>
             <name>Adapt Framework</name>
             <website>https://www.adaptframework.com</website>
         </vendor>
-        <authors>
-            <author>
-                <name>Matt Bruton</name>
-                <email>matt.bruton@gmail.com</email>
-            </author>
-        </authors>
-        <version>0.9.0</version>
         <depends_on>
             <bundle>
                 <name>adapt</name>
